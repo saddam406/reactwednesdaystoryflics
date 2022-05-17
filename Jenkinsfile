@@ -3,8 +3,10 @@ pipeline {
      stages {
         stage("Build") {
             steps {
-                sh "sudo npm config set legacy-peer-deps true"
-                sh "sudo npm run dev"
+                sh "npm install -g yarn"
+                sh "sudo yarn install"
+                sh "sudo yarn run build"
+                sh "sudo yarn run dev"
                 
             }
         }
