@@ -3,11 +3,12 @@ pipeline {
      stages {
         stage("Build") {
             steps {
-                sh "npm run dev"
-            }
+                echo "dev"
+           }
         }
         stage("Deploy") {
             steps {
+                sh "npm run dev"
                 sh "rm -rf /var/www/jenkins-react-app"
                 sh "cp -r ${WORKSPACE}/build/ /var/www/jenkins-react-app/"
             }
