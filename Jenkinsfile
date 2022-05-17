@@ -3,7 +3,9 @@ pipeline {
      stages {
         stage("Build") {
             steps {
-                sh 'npm run dev'
+                sh "npm run dev"
+                sh "npm next dev"
+                
             }
         }
         stage("Deploy") {
