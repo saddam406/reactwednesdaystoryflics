@@ -1,23 +1,17 @@
 pipeline {
-	agent any 
-	stages {	
-		stage('build') {
-			steps {
-				echo 'building the appications...'
-			}
-		}
-
-		stage('test') {
-			steps {
-				echo 'testing the appications...'
-			}
-		}
-
-		stage('deploy') {
-			steps {
-				echo 'deploying the appication'
-			}
-		}
-	}
+     agent any
+     stages {
+        stage("Build") {
+            steps {
+                sh " npm install -g"
+                sh " npm run build"
+            }
+        }
+        stage("Deploy") {
+            steps {
+                sh "rm -rf /var/www/jenkins-react-app"
+                sh "cp -r ${WORKSPACE}/build/ /var/www/jenkins-react-app/"
+            }
+        }
+    }
 }
-
