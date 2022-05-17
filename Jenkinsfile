@@ -1,15 +1,18 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:lts-bullseye-slim' 
-            args '-p 3000:3000' 
-        }
-    }
-    stages {
-        stage('Build') { 
+     agent any
+     stages {
+        stage("Build") {
             steps {
-                sh 'npm install' 
+                sh "sudo npm install"
+                sh "sudo npm run build"
+            }
+        }
+        stage("Deploy") {
+            steps {
+                sh "sudo rm -rf /var/www/jenkins-react-app/story-flics"
+                sh "sudo cp -r ${WORKSPACE}/build/ /var/www/jenkins-react-app/story-flics"
             }
         }
     }
 }
+
