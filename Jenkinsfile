@@ -3,8 +3,8 @@ pipeline {
      stages {
         stage("Build") {
             steps {
-                sh "sudo npm install "
-                sh "sudo npm run build"
+                sh "sudo npm config set legacy-peer-deps true"
+                sh "sudo npm run dev"
                 
             }
         }
