@@ -3,7 +3,7 @@ pipeline {
      stages {
         stage("Build") {
             steps {
-                sh "npm install -g yarn"
+                sh "sudo npm install -g yarn"
                 sh "sudo yarn install"
                 sh "sudo yarn run build"
                 sh "sudo yarn run dev"
