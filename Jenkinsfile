@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'node:myjenkins-blueocean'
+            image 'node:lts-bullseye-slim'
             args '-p 3000:3000'
         }
     }
