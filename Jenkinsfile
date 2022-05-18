@@ -1,25 +1,9 @@
 pipeline {
-    agent any
-
-    stages {
-        stage('Build') {
+     agent any
+     stages {
+        stage("Build") {
             steps {
-                nodejs(nodeJSInstallationName: 'Node 6.x', configId: '<config-file-provider-id>') {
-                    sh 'npm config ls'
-                    sh 'npm run dev'
-                }
-            }
-        }
-    }
-}
+                sh 'npm run dev'
                 
             }
         }
-        stage("Deploy") {
-            steps {
-                sh "sudo rm -rf /var/www/jenkins-react-app/"
-                sh "sudo cp -r ${WORKSPACE}/build/ /var/www/jenkins-react-app/"
-            }
-        }
-    }
-}
