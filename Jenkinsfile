@@ -3,7 +3,7 @@ pipeline {
      stages {
         stage("Build") {
             steps {
-                sh "sudo run dev"
+                sh "npm run dev"
                 
             }
         }
