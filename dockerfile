@@ -8,11 +8,11 @@ COPY package*.json ./
 
 USER node
 
-RUN npm install
+RUN npm i create-next-app
 
 COPY --chown=node:node . .
 
 EXPOSE 3000
 
-CMD [ "node", "app.js" ]
+CMD [ "node", "index.js" ]
 
