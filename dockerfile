@@ -1,4 +1,4 @@
-FROMM node:6-alpine
+FROM node:6-alpine
 
 RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 
@@ -12,7 +12,7 @@ RUN npm install
 
 COPY --chown=node:node . .
 
-EXPOSE 8080
+EXPOSE 3000
 
 CMD [ "node", "app.js" ]
 
