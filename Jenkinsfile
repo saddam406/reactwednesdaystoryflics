@@ -14,8 +14,8 @@ pipeline {
                 sh 'npm cache clean --force'
                 sh 'rm -rf node_modules'
                 sh 'yarn install' 
-                sh 'yarn run build'
-                sh 'yarn add @ant-design/icons@4.0.0'
+                sh 'yarn run dev'
+                
                 
                 
                
