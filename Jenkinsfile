@@ -11,7 +11,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm install'
+                sh 'npm  i create-next-app'
+                sh 'npm run dev'
             }
         }
         stage('Test') {
