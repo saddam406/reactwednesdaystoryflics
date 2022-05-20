@@ -15,7 +15,7 @@ pipeline {
                 sh 'rm -rf node_modules'
                 sh 'yarn install --force' 
                 sh 'yarn run build'
-                sh 'yarn run dev'
+                sh 'yarn start'
                
             }
         }
