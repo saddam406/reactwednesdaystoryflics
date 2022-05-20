@@ -1,43 +1,16 @@
 {
-  "name": "storyflics",
+  "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
   "dependencies": {
-    "core-js": "^3.6.4",
-    "vue": "^2.6.11",
-    "vue-router": "^3.1.6"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-scripts": "1.0.14"
   },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.2.0",
-    "@vue/cli-plugin-eslint": "^4.2.0",
-    "@vue/cli-service": "^4.2.0",
-    
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.1.2",
-    "vue-template-compiler": "^2.6.11"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
 }
