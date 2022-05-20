@@ -15,6 +15,7 @@ pipeline {
                 sh 'rm -rf node_modules'
                 sh 'yarn install' 
                 sh 'yarn run build'
+                sh 'yarn install --ignore-scripts'
                 
                 
                
