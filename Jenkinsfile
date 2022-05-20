@@ -13,7 +13,7 @@ pipeline {
             steps {
                 sh 'npm cache clean --force'
                 sh 'rm -rf node_modules'
-                sh 'yarn run dev' 
+                sh 'yarn  dev' 
                 
                 
                 
