@@ -13,9 +13,9 @@ pipeline {
             steps {
                 sh 'npm cache clean --force'
                 sh 'rm -rf node_modules'
-                sh 'yarn install --force' 
-                sh 'yarn run build'
-                sh 'yarn start'
+                sh 'npm install' 
+                sh 'npm run dev'
+                
                
             }
         }
