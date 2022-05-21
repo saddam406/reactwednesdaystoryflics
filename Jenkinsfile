@@ -15,7 +15,7 @@ pipeline {
                 sh 'rm -rf node_modules'
                 sh 'sudo apt unstall curl'
                 sh 'curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -'
-                echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list"
+                echo "deb https://dl.yarnpkg.com/debian/ stable main" | "sudo tee /etc/apt/sources.list.d/yarn.list"
                 sh 'yarn install --force'
                 sh 'yarn add @ant-design/icons@4.7.0'
                 sh 'yarn add escape-string-regexp'
