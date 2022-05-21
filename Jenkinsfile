@@ -13,7 +13,7 @@ pipeline {
             steps {
                 sh 'npm cache clean --force'
                 sh 'rm -rf node_modules'
-                sh 'yarn  install' 
+                sh 'yarn install --ignore-scripts' 
                 
                 sh 'yarn add escape-string-regexp'
                 sh 'yarn add @ant-design/icons@4.7.0'
