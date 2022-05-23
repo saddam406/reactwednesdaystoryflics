@@ -8,7 +8,7 @@ pipeline {
                 sh "rm -rf node_modules"
                 sh "sudo npm install"
                 sh "sudo npm install react"
-                sh "node --experimental-json-modules en.json"
+                sh "npm i react-phone-number-input"
                 
             }
         }
