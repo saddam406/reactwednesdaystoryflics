@@ -7,7 +7,7 @@ pipeline {
                 sh "npm cache clean --force"
                 sh "rm -rf node_modules"
                 sh "sudo npm install"
-                sh "sudo apt install react"
+                sh "sudo npm install react"
                 sh "node --experimental-json-modules en.json"
                 
             }
