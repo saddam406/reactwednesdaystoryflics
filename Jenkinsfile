@@ -6,7 +6,9 @@ pipeline {
             steps {
                 sh "sudo npm install --force "
                 sh "sudo npm install -g npm@8.10.0"
+                sh "npm install next@canary"
                 sh "sudo npm run build"
+                 
                  
 
                 
