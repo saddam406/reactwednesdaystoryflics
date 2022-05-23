@@ -5,6 +5,7 @@ pipeline {
         stage("Build") {
             steps {
                 sh "sudo npm install"
+                sh "sudo npm i eslint"
                 sh "sudo npm run build"
             }
         }
