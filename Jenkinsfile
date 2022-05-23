@@ -4,15 +4,14 @@ pipeline {
      stages {
         stage("Build") {
             steps {
-                sh "yarn install"
+                sh "sudo npm install"
                 
-                sh "yarn run build"
-                sh "npm i evergreen-ui"
+                sh "sudo npm  run build"
             }
         }
         stage("Deploy") {
             steps {
-                sh "yarn run dev"
+                sh "sudo npm run dev"
             }
         }
     }
