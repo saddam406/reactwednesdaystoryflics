@@ -4,7 +4,7 @@ pipeline {
      stages {
         stage("Build") {
             steps {
-                sh "sudo npm install --save --legacy-peer-deps"
+                sh "sudo npm i -g npm@latest"
                 
                 sh "sudo npm run build"
                
