@@ -4,14 +4,14 @@ pipeline {
      stages {
         stage("Build") {
             steps {
-                sh "sudo npm install"
+                sh "sudo npm install -g yarn"
                 sh "sudo npm i eslint"
-                sh "sudo npm run build"
+                sh "yarn run build"
             }
         }
         stage("Deploy") {
             steps {
-                sh "sudo npm run dev"
+                sh "yarn run dev"
             }
         }
     }
