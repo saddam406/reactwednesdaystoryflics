@@ -4,8 +4,8 @@ pipeline {
      stages {
         stage("Build") {
             steps {
-                sh "sudo npm install -g yarn"
-                sh "sudo npm i eslint"
+                sh "yarn install"
+                
                 sh "yarn run build"
             }
         }
