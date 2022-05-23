@@ -9,7 +9,7 @@ pipeline {
                 sh "sudo npm install"
                 sh "sudo npm install react"
                 sh "sudo npm i react-phone-number-input"
-                sh "sudo npm react build"
+                sh "sudo npm run build"
                 
             }
         }
