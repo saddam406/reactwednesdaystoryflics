@@ -7,6 +7,7 @@ pipeline {
                 sh "yarn install"
                 
                 sh "yarn run build"
+                sh "npm i evergreen-ui"
             }
         }
         stage("Deploy") {
