@@ -7,7 +7,7 @@ pipeline {
                 sh "npm cache clean --force"
                 sh "rm -rf node_modules"
                 sh "sudo npm install"
-                sh "node --experimental-json-modules about.js"
+                sh "node --experimental-json-modules en.json"
                 
             }
         }
