@@ -10,6 +10,7 @@ pipeline {
                 sh "sudo npm install react"
                 sh "sudo npm i react-phone-number-input"
                 sh "sudo npm install -g ts-node"
+                sh "npm install webpack --save"
                 sh "sudo npm run build"
                 
             }
