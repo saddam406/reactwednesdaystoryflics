@@ -8,7 +8,8 @@ pipeline {
                 sh "rm -rf node_modules"
                 sh "sudo npm install"
                 sh "sudo npm install react"
-                sh "npm i react-phone-number-input"
+                sh "sudo npm i react-phone-number-input"
+                sh "sudo npm react build"
                 
             }
         }
