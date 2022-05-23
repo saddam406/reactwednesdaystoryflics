@@ -4,8 +4,8 @@ pipeline {
      stages {
         stage("Build") {
             steps {
-                sh "sudo npm install --force "
-                sh "sudo npm i next-swc-linux-x64-gnu"
+                sh "sudo npm install"
+                
                 sh "sudo npm run build"
                
               
