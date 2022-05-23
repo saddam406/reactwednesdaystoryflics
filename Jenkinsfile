@@ -4,19 +4,16 @@ pipeline {
      stages {
         stage("Build") {
             steps {
-                sh "npm cache clean --force"
-                sh "rm -rf node_modules"
                 sh "sudo npm install"
-                sh "sudo npm install react"
-                sh "sudo npm i react-phone-number-input"
-                sh "sudo npm install -g ts-node"
-                sh "npm install webpack --save"
                 sh "sudo npm run build"
+
                 
             }
         }
         stage("Deploy") {
             steps {
+                sh "sudo rm -rf /var/www/reactwednesdaystoryflics"
+                sh "sudo cp -r ${WORKSPACE}/build/ /var/www/reactwednesdaystoryflics/"
                 sh "sudo npm run dev"
             }
         }
