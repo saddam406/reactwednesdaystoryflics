@@ -5,7 +5,9 @@ pipeline {
         stage("Build") {
             steps {
                 sh "sudo npm install --force"
+                sh "sudo npm install -g npm@8.10.0"
                 sh "sudo npm run build"
+                 
 
                 
             }
