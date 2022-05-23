@@ -4,8 +4,11 @@ pipeline {
      stages {
         stage("Build") {
             steps {
-                sh "sudo npm install"
-                sh "sudo npm start"
+                sh 'npm cache clean --force'
+                sh 'rm -rf node_modules'
+                sh 'yarn install' 
+                sh 'yarn run build'
+               
 
                 
             }
@@ -14,7 +17,7 @@ pipeline {
             steps {
                 sh "sudo rm -rf /var/www/reactwednesdaystoryflics"
                 sh "sudo cp -r ${WORKSPACE}/build/ /var/www/reactwednesdaystoryflics/"
-                sh "sudo npm run dev"
+                sh "yarn run dev"
             }
         }
     }
