@@ -7,8 +7,7 @@ import Button from '@mui/material/Button';
 function Bodycomponent() {
   return (
     <div className={styles.bodyheader}>
-        <img style={{width:'100%',height:'480px'}} src='https://github.com/vijay9655/Sample-img/blob/main/Banner%20blue%20grad.png?raw=true'/>
-        <div style={{marginTop:'-400px',marginLeft:'80px'}}><p style={{fontWeight:'bold',fontSize:'40px',color:'white',marginLeft:'70px',marginTop:'35px',fontFamily:'sans-serif'}}>Hi, we're Storyflics.</p>
+                <div style={{marginTop:'-400px',marginLeft:'80px'}}><p style={{fontWeight:'bold',fontSize:'40px',color:'white',marginLeft:'70px',marginTop:'35px',fontFamily:'sans-serif'}}>Hi, we're Storyflics.</p>
         <p style={{fontWeight:'bold',fontSize:'22px',color:'white',marginLeft:'15px',fontFamily:'sans-serif'}}>Storyflics connects a global community of users <br/>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to watch and upload stories.</p>
       <ul style={{listStyleType:'none',display:'flex',marginLeft:'-15px'}}>
