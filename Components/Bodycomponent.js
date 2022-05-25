@@ -7,6 +7,8 @@ import Button from '@mui/material/Button';
 function Bodycomponent() {
   return (
     <div className={styles.bodyheader}>
+    <img style={{width:'100%',height:'480px'}} src='https://github.com/vijay9655/Sample-img/blob/main/Banner%20blue%20grad.png?raw=true'/>
+    
     
     
                 <div style={{marginTop:'-400px',marginLeft:'80px'}}><p style={{fontWeight:'bold',fontSize:'40px',color:'white',marginLeft:'70px',marginTop:'35px',fontFamily:'sans-serif'}}>Hi, we're Storyflics.</p>
