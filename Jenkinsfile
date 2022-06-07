@@ -10,8 +10,7 @@ pipeline {
      
             }
         }
-        post {
-           always {
+        stage("post")
              junit '**/reports/junit/*.xml'
         
             }
