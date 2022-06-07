@@ -16,7 +16,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        bat "npm run build"
+        bat "npm i junit"
 
       }
     }
