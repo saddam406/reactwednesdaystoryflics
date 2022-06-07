@@ -3,14 +3,24 @@ pipeline {
      stages {
         stage("Build") {
             steps {
-                sh "sudo npm install"
-                sh "sudo npm run build"
+                sh "npm cache clean --force"
+                sh "rm -rf node_modules"
+                sh "npm install --force"
+                sh "npm install swr"
+     
+            }
+        }
+        post {
+           always {
+             junit '**/reports/junit/*.xml'
+        
             }
         }
         stage("Deploy") {
             steps {
-                  sh "sudo npm run dev"
+                  sh "npm run dev"
             }
-        }
-    }
+        } 
+    
+     }
 }
