@@ -9,20 +9,20 @@ pipeline {
       steps {
         script {
              
-             sh "npm install --force"
-             sh "npm install swr"
+             bat "npm install --force"
+             bat "npm install swr"
         }
       }
     }
     stage('Test') {
       steps {
-        sh "the test is successful"
+        bat "the test is successful"
 
       }
     }
     stage('deploy') {
       steps {
-        sh "npm run dev"
+        bat "npm run dev"
       }
     }
   }
