@@ -16,7 +16,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        bat "the test is successful"
+        bat "npm run test"
 
       }
     }
