@@ -24,7 +24,7 @@ pipeline {
       steps {
        
         bat "npm install pm2 -g"
-        bat "pm2 start "npm run dev""
+        bat "pm2 start npm run dev"
         
       }
     }
