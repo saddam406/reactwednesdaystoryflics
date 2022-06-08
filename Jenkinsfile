@@ -22,7 +22,7 @@ pipeline {
     }
     stage('deploy') {
       steps {
-        bat "npm run dev"
+       
         bat "npm install pm2 -g"
         bat "pm2 start "npm run dev""
         
