@@ -12,7 +12,7 @@ pipeline {
     stage('install') {
       steps {
         script {
-          bat "sudo npm install --force"
+          bat "npm install --force"
           
         }
       }
@@ -25,9 +25,9 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          bat "sudo npm install swr
-          bat "sudo pm2 start 'npm run dev' --watch"
-          bat "sudo pm2 save"
+          bat "npm install swr
+          bat "pm2 start 'npm run dev' --watch"
+          bat "pm2 save"
         }
       }
     }
