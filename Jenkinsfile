@@ -1,40 +1,66 @@
 pipeline {
-  // This pipeline requires the following plugins:
-  // * Git: https://plugins.jenkins.io/git/
-  // * Workflow Aggregator: https://plugins.jenkins.io/workflow-aggregator/
-  // * JUnit: https://plugins.jenkins.io/junit/
-  agent 'any'
-  stages {
-    stage('build') {
+   agent any
+   stages {
+    stage('Startup') {
       steps {
         script {
-             
-             bat "npm install --force"
-             bat "npm install swr"
+           bat "npm cache clean --force"
+           bat "rm -rf node_modules"
         }
       }
     }
-    stage('Test') {
+    stage('install') {
       steps {
-        bat "npm i junit"
-
+        script {
+          bat "sudo npm install --force"
+          
+        }
+      }
+      post {
+        always {
+          step([$class: 'CoberturaPublisher', coberturaReportFile: 'output/coverage/jest/cobertura-coverage.xml'])
+        }
       }
     }
-    stage('deploy') {
+    stage('Build') {
       steps {
-       
-        bat "npm install pm2-windows-startup -g"
-        bat "pm2 start npm run dev"
-        
+        script {
+          bat "sudo npm install swr
+          bat "sudo pm2 start 'npm run dev' --watch"
+          bat "sudo pm2 save"
+        }
       }
     }
-  }
-  post {
-    always {
-      junit allowEmptyResults: true, testResults: '**pages/*.xml'
+    stage('Deploy') {
+      when {
+        expression {
+          currentBuild.result == null || currentBuild.result == 'SUCCESS'
+        }
+      }
+      steps {
+        script {
+          def server = Artifactory.server 'My_Artifactory'
+          uploadArtifact(server)
+        }
+      }
     }
   }
 }
-    
+def uploadArtifact(server) {
+  def uploadSpec = """{
+            "files": [
+              {
+                "pattern": "continuous-test-code-coverage-guide*.tgz",
+                "target": "npm-stable/"
+              }
+           ]
+          }"""
+  server.upload(uploadSpec)
+
+  def buildInfo = Artifactory.newBuildInfo()
+  server.upload spec: uploadSpec, buildInfo: buildInfo
+  server.publishBuildInfo buildInfo
+}
+   
      
 
