@@ -1,32 +1,34 @@
+#!/bin/groovy
 pipeline {
-   agent any
-   stages {
+  tools {
+    nodejs 'default-nodejs'
+  }
+  stages {
     stage('Startup') {
       steps {
         script {
-            bat "npm install --force"
+          bat 'npm install --force'
+          bat 'npm install — dev jest-junit'
         }
       }
     }
-    stage('install') {
+    stage('Test') {
       steps {
         script {
-             bat "npm install swr"
-         
-          
+          bat 'npm run test'
         }
       }
       post {
         always {
-          step([$class: 'CoberturaPublisher', coberturaReportFile: 'output/coverage/jest/cobertura-coverage.xml'])
+          junit 'output/coverage/junit/junit.xml'
         }
       }
     }
     stage('Build') {
       steps {
         script {
-            bat "npm install pm2-windows-startup -g"
-            bat "pm2 start npm run dev"
+          bat 'npm start'
+          bat 'npm pack'
         }
       }
     }
@@ -55,7 +57,6 @@ def uploadArtifact(server) {
            ]
           }"""
   server.upload(uploadSpec)
-
   def buildInfo = Artifactory.newBuildInfo()
   server.upload spec: uploadSpec, buildInfo: buildInfo
   server.publishBuildInfo buildInfo
