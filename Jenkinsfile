@@ -25,7 +25,7 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          bat "npm install swr
+          bat "npm install swr"
           bat "pm2 start 'npm run dev' --watch"
           bat "pm2 save"
         }
