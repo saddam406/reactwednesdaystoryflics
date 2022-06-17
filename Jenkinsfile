@@ -5,8 +5,9 @@ pipeline {
     stage('Startup') {
       steps {
         script {
-          bat 'npm install --force'
           bat 'npm install — dev jest-junit'
+          bat 'npm install --force'
+          
         }
       }
     }
