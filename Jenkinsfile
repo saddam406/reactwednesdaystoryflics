@@ -4,15 +4,15 @@ pipeline {
     stage('Startup') {
       steps {
         script {
-           bat "npm cache clean --force"
-           bat "rm -rf node_modules"
+            bat "npm install --force"
         }
       }
     }
     stage('install') {
       steps {
         script {
-          bat "npm install --force"
+             bat "npm install swr"
+         
           
         }
       }
@@ -25,9 +25,8 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          bat "npm install swr"
-          bat "pm2 start 'npm run dev' --watch"
-          bat "pm2 save"
+            bat "npm install pm2-windows-startup -g"
+            bat "pm2 start npm run dev"
         }
       }
     }
