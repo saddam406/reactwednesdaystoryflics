@@ -8,6 +8,7 @@
   "jest": {
     "coverageReporters": [
       "text"
+      "html"
     ],
     "reporters": [
       "default",
