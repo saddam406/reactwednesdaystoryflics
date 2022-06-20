@@ -6,7 +6,7 @@ pipeline {
       steps {
         script {
           bat 'npm cache clean --force'
-          bat 'npm install --force'
+        
           
         }
       }
