@@ -5,7 +5,7 @@ pipeline {
     stage('Startup') {
       steps {
         script {
-          bat 'npm cache clean'
+          bat 'npm cache clean --force'
           bat 'npm install --force'
           
         }
