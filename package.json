@@ -1,4 +1,4 @@
-{
+
   "name": "continuous-test-code-coverage-guide",
   "scripts": {
     "start": "webpack",
