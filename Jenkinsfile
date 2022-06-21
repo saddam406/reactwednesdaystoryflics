@@ -14,6 +14,8 @@ pipeline {
     stage('Test') {
       steps {
         script {
+          bat 'npm install --save-dev jest'
+          bat 'npm install jest-junit'
           bat 'npm run test'
         }
       }
