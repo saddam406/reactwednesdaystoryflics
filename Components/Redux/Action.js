@@ -1,6 +1,6 @@
 import * as types from './Actiontype' 
 import axios, { Axios } from 'axios'
-import { passThroughSymbol } from 'next/dist/server/web/spec-compliant/fetch-event'
+
 
 export const signindata=(datas)=>({
     type:types.Signindata_DATA,
